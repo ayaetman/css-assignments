@@ -1,0 +1,556 @@
+.background {
+
+    /* background visibility */
+    background: transparent;
+    
+    /* Color: */
+
+    /* Color Name */
+    background-color: red;
+
+    /* rgb: Red, Green, Blue, Alpha Channel */
+    background-color: rgb(0 0 0 / 50%);
+
+    /* Color Hex Code :
+       00 for min (black)
+       FF for max (white)
+
+       We can define hex code with 6 digits or with 3 and combine each 2 digits in one digit.
+    */
+    background-color: #FFAA44;
+    /* or */
+    background-color: #FA4;
+
+    /* HSL Hue Values 
+    Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+    Saturation is a percentage value. 0% means a shade of gray, and 100% is the full color.
+    Lightness is also a percentage. 0% is black, 50% is neither light or dark, 100% is white
+    */
+    background-color: hsl(hue, saturation, lightness);
+
+
+    /* Image: */
+    background-image: url("../4814_A-small-mascot-plush-animal\ \(1\).jpg");
+    background-repeat: no-repeat;
+
+    /* Scrolling with image background*/
+
+    background-attachment: fixed;
+    /* Fixed >>>> remains when scrolling  */
+    /* Scroll >>>> gets hidden when scrolling (remains above at its place)  */
+    /* background attachment default value  : scroll */
+
+    /* Image Position: */
+    
+    background-position: left top;
+    /* background position default value : center in both x and y.
+    if we defined 1 direcction and left the other value it is defined with center as default
+    */
+    background-position: 100px 200px;
+                        /* (left) (top) */
+    background-position: 50% 70%;
+                      /* (left) (top) */
+
+    /* Image Size: */
+
+    background-size:auto; 
+    /* default value : auto >>> the img shows in its original size and it gets cut if we zoomed in or if we made the background smaller*/
+
+    background-size: cover;
+    /* when adjusting the background to bigger (zoom out) the image will stretch at its maximum size,
+       and when adjusting the background to smaller (zoom in) the image gets cut */
+
+    background-size: contain;
+    /* the image size gets smaller whenever we adjust the background to smaller (zoom in) but never gets cut,
+       and when adjusting the background to bigger (zoom out) the image gets bigger until it reaches its original size
+       and it stops */
+
+    background-size: 500px 450px;
+                /*   width height  */
+    background-size: 50% 70%;
+                /*   width height  */
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Box Model */
+
+.padding {
+    
+    /* padding accepts pxs and %s but do not accept negative value */
+
+    /* Top Right Bottom Left */
+    /* 10px 10px 10px 10px */
+    padding: 10px;
+
+    /* Top Right Bottom Left */
+    /* 10px 20px 10px 20px */
+    padding: 10px 20px;
+
+    /* Top Right Bottom Left */
+    /* 10px 20px 15px 20px */
+    padding: 10px 20px 15px;
+
+    /* padding-bottom: 10px; */
+    padding-top: 10px;
+}
+
+.margin {
+
+    /* margin accepts pxs , %s and negative value */
+    width: 70%;
+    /* margin : auto >>>> auto value maps to all top right bottom left directions */
+    margin: auto;
+
+}
+
+.border {
+
+    /* Every property can customize its top right bottom left directions but not with the shorthand property */
+    border-width: 10px 20px 30px 40px;
+    /* This means :
+    border-top-width: 10px;
+    border-right-width: 20px;
+    border-bottom-width: 30px;
+    border-left-width: 40px; */
+
+    border-color: red blue green yellow;
+    /* This means :
+    border-top-color: red;
+    border-right-color: blue;
+    border-bottom-color: green;
+    border-left-color: yellow; */
+
+    border-style: solid dashed dotted double;
+    /* This means :
+    border-top-style: solid;
+    border-right-style: dashed;
+    border-bottom-style: dotted;
+    border-left-style: double; */
+
+    /* Shorthand property */
+    border: 10px solid red;
+    /* This means:
+    border-width: 10px; border-style: solid; border-color: red; */
+
+}
+
+.outline {
+
+    /* Outline vs border :
+        >>> Element border is considered as a part of the element but the element outline isn't.
+        >>> Element border can actually do all outline's jobs and features but the outline can't.
+        >>> Element outline can't customize the style/color/width of each direction like in the border,
+        the style/color/width gets applied to all directions unlike the free directions customization in the border properties.
+        >>> Element radius property can get applied only on the border because it is considered as an actual part of the borders of the element,
+        but the radius cannot get applied on the outline because it is considered as an outline part of the element.
+     */
+     outline: 10px solid red;
+    
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Element Display */
+
+
+.block-inline-inlineBlock {
+
+    /*
+    Block:
+
+    - Take Full Width If No Width Is Defined
+    - Respect Padding, Margin, Width, Height
+    - Add a Line-Break
+
+    Inline:
+
+    - Do Not Repsepct Width, Height
+    - Respect Padding And Margin [ Just Right + Left ]
+    - Do Not Add a Line-Break
+    - Allow Elements Before And After It in The Same Line
+
+    Inline-Block:
+
+    - Do Not add a Line-Break After The Element
+    - Allow Elements Before And After It in The Same Line (makes the block >>> inline)
+    - Respect Padding, Margin, Width, Height (makes the inline >>> block)
+    */
+    
+    display: inline-block;
+}
+
+.visibility {
+
+    /* visibility:hidden hides the element, but it still takes up space in the layout.
+       display:none removes the element from the document. It does not take up any space. */
+
+    visibility: hidden; /* default value: visible */
+    display: none; /* default value: block */
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Grouping */
+
+.one {
+    border-bottom: 2px solid red;
+    color: red;
+  }
+
+.two {
+    border-bottom: 2px solid green;
+    color: green;
+}
+
+.three {
+    border-bottom: 2px solid blue;
+    color: blue;
+}
+
+.four {
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.one,
+.two,
+.three,
+.four,
+.my-p {
+    padding: 15px;
+    margin: 12px 0;
+    background-color: #ededed;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Element Dimensions */
+
+.Dimensions {
+
+    width: 100px;
+    min-width: 200px;
+    max-width: 500px;
+
+    height: 200px;
+    min-height: 250px;
+    max-height: 400px;
+    
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Text Styling , Adjustment and Overflow */
+
+.textShadow {
+
+    /* text-shadow: H-shadow V-shadow Blur Color */
+
+    background-color: #aaa;
+    color: rebeccapurple;
+    text-shadow: 5px 5px 1px rgb(0 0 0 /10%);
+    /* we can make multiple shadows in the same property by putting comma in between */
+
+}
+
+.text-alignment {
+
+        background-color: #f9f9f9;
+        text-align: center;
+        direction: ltr;
+        vertical-align: middle; /* The alignment of the text in according to an image placed within the text */
+
+}
+
+.tect-decorationANDtransformation {
+
+    text-decoration: underline;
+    text-decoration: none;
+    text-transform: capitalize; /* capitalize every first character in each word */
+    text-transform: uppercase;  /* makes all the text in uppercase */
+    text-transform: lowercase;  /* makes all the text in lowercase */
+
+}
+
+.spacing {
+
+    background-color: #eee;
+    width: 200px;
+    
+    /* letter spacing can be positive or negative value */
+    letter-spacing: 2px;
+    word-spacing: 50px;
+    text-indent: 50px;
+    line-height: 160%;
+    /* 1 = 100%
+       1.6 = 160%
+       etc.  */
+    
+    /* white-space property defines whether the text will break and wrap or not */
+    white-space: normal;
+    /* The text breakes at the whitespace when it reaches the end of the element width and wrap to the next line */
+    white-space: nowrap;
+    /* The text does not break nor wrap at any part of it */
+
+    word-break: break-all ;
+    word-wrap: break-word ;
+    /* The “word-break: break-all;” will break the word at any character so the result is to difficulty in reading whereas 
+       “word-wrap: break-word;” will split word without making the word not break in the middle and wrap it into next line. */
+
+}
+
+.text-overflow{
+
+    overflow: visible;
+    /* The overflow content is visible */
+    overflow: hidden;
+    /* Hides the overflow content */
+    overflow: scroll;
+    /* Makes a scroll for both x and y axes with overflow text or without */
+    overflow: auto;
+    /* auto makes a scroll only if the text is overflow, otherwise it doesn't */
+    overflow-x: scroll;
+    overflow-y: scroll;
+    /*
+    If the element container overflows in only the x axis and we said "overflow-x: scroll" it will make a scroll
+    for x axis only and same goes for y axis, BUT if the element container overflows in y axis and we said "overflow-x: scroll"
+    it will make a scroll for both x and y axis => for x "like what we wanted" and for y axis too because the overflow
+    is basically in y axis not x axis.
+    If the element container overflows in both x and y axis and we only
+    said "overflow-x: scroll" OR "overflow-y: scroll" it will make a scroll for both x and y axis.
+    */           
+    overflow-x: hidden; 
+    /* Hides x axis content and makes a scroll for y axis */
+    overflow-y: hidden;
+    /* Hides y axis content and makes a scroll for x axis */
+
+}
+
+.text-overflow-adjust {
+
+    background-color: #eee;
+    width: 200px;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.text-overflow:hover {
+
+    overflow: visible;
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Inheritance */
+
+.inheritance {
+    text-align: center;
+    padding: 20px;
+    background-color: #EEE;
+    font-size: 20px;
+    border: 2px solid blue;
+  }
+
+.inheritance p {
+    border: 2px solid;
+    border-color: inherit;
+    padding: inherit;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Font Styling */
+
+.with-ser {
+
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  .san-ser {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.with-ser,
+.san-ser {
+
+    background-color: #EEE;
+    padding: 10px;
+
+}
+
+/* Font families attaching / linking */
+
+body {
+
+    /* web safe fonts "not used / preferable" */
+    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* or google fonts "most used / preferable" */
+    font-family: 'Cairo', sans-serif;
+    /* and then attach the specified link tags from google fonts to the html head tag */
+
+}
+
+.font-style{
+
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-weight: normal;
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Measurements */
+
+.units {
+/* 
+CSS Units :
+
+px => pixel
+em => one time of the parent element size
+rem => root element time >>> the html root element/tag
+% => percentage of the parent element size (width / height / font size / etc.)
+vw => viewport width:
+1vw = 1/100 OR 1% of viewports's width
+vh => viewport height:
+1vh = 1/100 OR 1% of viewports's height
+vmin => 1% of viewport's smaller (vw or vh) dimension
+vmax => 1% of viewport's larger (vw or vh) dimension
+
+NOTES:
+
+***1em != 16px***
+Default font size of web page is 16px
+
+*/
+font-size: 5vw;
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Float and Clear */
+
+/* The float property is used for positioning and formatting content e.g. let an image float left to the text in a container. */
+
+.parent {
+
+    background-color: red;
+    padding: 10px;
+
+}
+
+.parent div {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    width: 25%;
+    float: left;
+
+}
+
+/*  When we use the float property, and we want the next element below (not on right or left), we will have to use the clear property.
+    The clear property specifies what should happen with the element that is next to a floating element. */
+
+.clear {
+
+    clear: both;
+    
+}
+
+/* NOTES :
+
+When we set the float properety to the elements, the elements "floats" literally over the layout and are considered as an overflow to
+the parent element. So, we have 3 options to fix this:
+
+1): Set a particular height to the parent element so it can contains the floating elements inside, but this is bad.
+
+2): Set "overflow: hidden" property so the floating elements reset to its considered original position in the parent containing element
+(its original position in the layout) and not floating over the layout generally. This solution is mid, because of the condition that may
+happen when a pop-up shows and the "hidden" will hide its content.
+
+3): Use the property "clear: both" and set it to an element that is not used practically in the layout (ex: empty paragraph) and this element
+will be called "the cleared element" and then put that element INSIDE the parent element domain specifically in the end of it.
+
+>>> When clearing floats, you should match the clear to the float: If an element is floated to the left, then you should clear to the left.
+Your floated element will continue to float, but the cleared element will appear below it on the web page.
+
+ex:
+*/
+.div1{
+
+    float: left;
+
+}
+  
+.div2{
+
+    clear: left;
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* CSS Calculations */
+
+body{
+
+    margin: 0;
+
+}
+
+div{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    float: left;
+    width: calc((100% - 60px) / 5);
+    margin-left: 10px;
+}
+  
+/*
+    Content Width Is: 100%
+    We want 10px for each space
+    6 spaces/intervals/breaks: 10px * 6 => 60px of the whole content width
+    The remaining available space >>> 100% - 60px
+    5 elements, for each one of them we have: (100% - 60px) / 5
+    We put that equation inside the parentheses of the calc function
+
+    >>> We can use the calc function generally with any property requires calculations or numerical values (ex: width/height)
+*/
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Opacity */
+
+.one {
+
+    background-color: red;
+    opacity: 0.1;
+    /* opacity property controls thhe opacity of a div element (the entire entity.. the whole thing) */
+}
+
+.two {
+
+    background-color: rgb(255 0 0 / 0.1)
+    /* alpha channel specifies the opacity for the ""background"" color only */
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */

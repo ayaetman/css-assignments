@@ -1,0 +1,37 @@
+.assign1 div{
+    background-color: #eee;
+    margin:40px;
+    display: inline-block;
+    outline:20px solid black;
+    padding: 100px;
+}
+.shap1{
+    border: 20px solid red;
+    
+}
+.shap2{
+    border-width: 20px;
+ border-style: solid;
+    border-color: blue green;
+}
+.shap3{
+    border-width: 20px;
+    border-color: red green blue yellow;
+    border-style: dashed;
+}
+.assign2 div{
+    width: 400px;
+    font-size: 30px;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: #eee;
+}
+.box1{
+    border-left: 10px solid palevioletred;
+}
+.box2{
+    visibility: hidden;
+}
+.box3{
+    border-left: 10px solid teal;
+}

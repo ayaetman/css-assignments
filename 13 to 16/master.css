@@ -1,0 +1,27 @@
+.parent .child .title{
+    color: red;
+}
+.parent  .title{
+    color: blue;
+}
+p{
+    color: green;
+}
+.title{
+    color: green;
+}
+.boxs{
+color: white;
+font-size: 20px;
+}
+.boxs div{
+background-color: brown;
+margin: 30px;
+padding: 30px;
+width: fit-content;
+max-width: 400px;
+}
+.title-four{
+    overflow: hidden;
+    height: 35px;
+}
