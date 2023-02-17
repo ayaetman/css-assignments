@@ -1,0 +1,296 @@
+.onee {
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border: 5px solid #fc24aa;
+    border-radius: 50%;
+    border-left-color: transparent;
+    position: relative;
+    animation-name: spin1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+@keyframes spin1 {
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+.onee:hover {
+    animation-play-state: paused;
+}
+.onee::before{
+    content: "";
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    border: 5px solid #0090ff;
+    position: absolute;
+    border-radius: 50%;
+    border-top-color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.onee::after{
+    content: "";
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    border: 5px solid yellow;
+    position: absolute;
+    border-radius: 50%;
+    border-right-color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.twoo {
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    border: 5px solid #2490ff;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    position: relative;
+    animation-name: spin2;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+@keyframes spin2 {
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.twoo:hover,
+.twoo:hover::before,
+.twoo:hover::after {
+    animation-play-state: running;
+}
+.twoo::before{
+ content: "";
+ width: calc(100% + 15px);
+ height: calc(100% + 15px);
+ position: absolute;
+ border: 5px solid #fc9000;
+ border-radius: 50%;
+ border-bottom-color: transparent;
+ left: -13px;
+ top: -13px;
+ animation-name: spin2;
+ animation-timing-function: linear;
+ animation-duration: 5s;
+ animation-iteration-count: infinite;
+ animation-play-state: paused;
+ }
+
+ .twoo::after {
+     content: "";
+     width: calc(100% + 30px);
+     height: calc(100% + 30px);
+     position: absolute;
+     border: 5px solid black;
+     border-radius: 50%;
+     border-bottom-color: transparent;
+     left: -20px;
+     top: -20px;
+     animation-name: spin2;
+     animation-timing-function: linear;
+     animation-duration: 10s;
+     animation-iteration-count: infinite;
+     animation-play-state: paused;
+ }
+span {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border: 5px solid black;
+    display: block;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation-name: spin3;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes spin3 {
+to {
+        transform: rotate(1turn);
+    }
+}
+
+.parent {
+    width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+    grid-template-rows: auto;
+    gap: 15px 15px;
+    position: relative;
+}
+
+.E div,
+.L div {
+    background-color: #363234;
+}
+
+.E,
+.L {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(7, 50px);
+}
+
+ .one {
+    grid-area: 1 / 1 / 2 / span 4;
+}
+
+.two {
+    grid-area: 2 / 1 / span 2 / 2;
+}
+
+.three {
+    grid-area: 4 / 1 / 5 / span 4;
+}
+
+.four {
+    grid-area: 5 / 1 / span 2 / 2;
+}
+
+.five {
+    grid-area: 7 / 1 / 8 / span 4;
+}
+
+.first {
+    grid-area: 1 / 1 / span 6 / 2;
+}
+
+.second {
+    grid-area: 7 / 1 / 8 / span 4;
+}
+
+.parent::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fea604;
+    left: 150px;
+    top: 5px;
+    animation-name: move-e;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+}
+
+.parent::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fea604;
+    right: 55px;
+    bottom: 55px;
+    opacity: 0;
+    animation-name: move-l;
+    animation-duration: 3s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+}
+
+@keyframes move-e {
+    0% {
+        left: 150px;
+        top: 5px;
+    }
+
+    10% {
+        top: 5px;
+        left: 5px;
+    }
+
+    20% {
+        left: 5px;
+        top: 155px;
+    }
+
+    30% {
+        top: 155px;
+        left: 150px;
+    }
+
+    40% {
+        left: 5px;
+        top: 155px;
+    }
+
+    50% {
+        left: 5px;
+        top: 305px;
+    }
+
+    60% {
+        top: 305px;
+        left: 150px;
+    }
+
+    70% {
+        left: 5px;
+        top: 305px;
+    }
+
+    90% {
+        top: 5px;
+        left: 5px;
+    }
+
+    100% {
+        left: 150px;
+        top: 5px;
+    }
+}
+
+@keyframes move-l {
+    0% {
+        right: 55px;
+        bottom: 55px;
+        opacity: 0;
+    }
+
+    10% {
+        right: 55px;
+        bottom: 55px;
+        opacity: 1;
+    }
+
+    30% {
+        bottom: 55px;
+        right: 200px;
+        opacity: 1;
+    }
+
+    90% {
+        right: 200px;
+        bottom: 350px;
+        opacity: 1;
+    }
+
+    100% {
+        right: 200px;
+        bottom: 350px;
+        opacity: 0;
+    }
+}
